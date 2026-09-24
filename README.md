@@ -14,8 +14,23 @@ SAE India BIT Sindri is a student-run collegiate club dedicated to fostering inn
 
 ## 🛠️ Tech Stack
 
-- HTML / CSS / JavaScript
-- Modern Web Technologies
+- TypeScript
+- Vite
+- Vanilla CSS & HTML5
+
+## 💻 Getting Started
+
+### Development
+```bash
+npm install
+npm run dev
+```
+
+### Production Build
+```bash
+npm run build
+npm run preview
+```
 
 ## 📬 Contact
 

@@ -1,0 +1,216 @@
+import {
+  NEWS, EVENTS, COMPETITIONS, BEARERS,
+  TEAM_SECTIONS, DEPARTMENTS, FILTER_DEFS,
+  TAG_CLASSES, PAGES,
+  type EventItem
+} from './data';
+
+// ===================== RENDER FUNCTIONS =====================
+
+function renderNews(): void {
+  const el = document.getElementById("newsGrid");
+  if (!el) return;
+  el.innerHTML = NEWS.map(n => `
+  <div class="news-card">
+    <div class="date mono">${n.date}</div>
+    <h3>${n.title}</h3>
+    <p>${n.body}</p>
+  </div>`).join("");
+}
+
+function renderEvents(filter: string): void {
+  const list: EventItem[] = filter === "all" ? EVENTS : EVENTS.filter(e => e.tag === filter);
+  const el = document.getElementById("eventTimeline");
+  if (!el) return;
+  el.innerHTML = list.map(e => `
+    <div class="tl-item">
+      <div class="tl-card">
+        <div class="tl-top">
+          <span class="tl-tag ${TAG_CLASSES[e.tag]}">${e.tagLabel}</span>
+          <span class="tl-term mono">${e.term}</span>
+        </div>
+        <h3>${e.title}</h3>
+        <p>${e.body}</p>
+        <div class="tl-loc mono">📍 ${e.loc}</div>
+      </div>
+    </div>`).join("");
+}
+
+function renderEventFilters(): void {
+  const filtersEl = document.getElementById("eventFilters");
+  if (!filtersEl) return;
+
+  filtersEl.innerHTML = FILTER_DEFS.map((f, i) =>
+    `<button class="chip ${i === 0 ? 'active' : ''}" data-filter="${f[0]}">${f[1]}</button>`).join("");
+
+  const chips = document.querySelectorAll<HTMLButtonElement>(".chip");
+  chips.forEach(chip => {
+    chip.addEventListener("click", () => {
+      chips.forEach(c => c.classList.remove("active"));
+      chip.classList.add("active");
+      renderEvents(chip.dataset.filter || "all");
+    });
+  });
+
+  renderEvents("all");
+}
+
+function renderCompetitions(): void {
+  const el = document.getElementById("compGrid");
+  if (!el) return;
+  el.innerHTML = COMPETITIONS.map(c => `
+  <div class="comp-card">
+    <a href="#" class="comp-gallery-link" title="Gallery">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>
+    </a>
+    <span class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">${c.icon}</svg></span>
+    <span class="team-of mono">${c.team}</span>
+    <h3>${c.title}</h3>
+    <p>${c.body}</p>
+    <div class="badge mono">+ Add latest result</div>
+  </div>`).join("");
+}
+
+function renderBearers(): void {
+  const el = document.getElementById("bearerGrid");
+  if (!el) return;
+  el.innerHTML = BEARERS.map(b => `
+  <div class="bearer-card">
+    <span class="role-tag mono">${b.role}</span>
+    <div class="avatar-row">
+      ${b.names.map(n => `
+        <div class="avatar-unit">
+          <div class="avatar">＋</div>
+          <span class="nm">${n}</span>
+        </div>`).join("")}
+    </div>
+    <div class="social-row">
+      <a href="#" aria-label="LinkedIn"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="7" y1="10" x2="7" y2="17"/><circle cx="7" cy="7" r="0.6" fill="currentColor"/><path d="M11 17v-4.5c0-1.4 1-2.3 2.2-2.3 1.2 0 1.8.9 1.8 2.3V17"/></svg></a>
+      <a href="#" aria-label="Email"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></a>
+    </div>
+  </div>`).join("");
+}
+
+function renderTeamSections(): void {
+  const el = document.getElementById("teamSections");
+  if (!el) return;
+  el.innerHTML = TEAM_SECTIONS.map(sec => `
+  <div class="team-section">
+    <div class="team-section-head">
+      <h2>${sec.name}</h2>
+      <span class="team-blurb">${sec.blurb}</span>
+    </div>
+    <div class="team-divider"></div>
+    <div class="member-grid">
+      ${sec.roles.map(role => `
+        <div class="member-card">
+          <div class="avatar">＋</div>
+          <span class="nm">Add Name</span>
+          <span class="role-tag mono">${role}</span>
+        </div>`).join("")}
+    </div>
+  </div>`).join("");
+}
+
+function renderDepartments(): void {
+  const el = document.getElementById("departmentSections");
+  if (!el) return;
+  el.innerHTML = DEPARTMENTS.map(sec => `
+  <div class="team-section">
+    <div class="team-section-head">
+      <h2>${sec.name}</h2>
+      <span class="team-blurb">${sec.blurb}</span>
+    </div>
+    <div class="team-divider"></div>
+    <div class="member-grid">
+      ${sec.roles.map(role => `
+        <div class="member-card">
+          <div class="avatar">＋</div>
+          <span class="nm">Add Name</span>
+          <span class="role-tag mono">${role}</span>
+        </div>`).join("")}
+    </div>
+  </div>`).join("");
+}
+
+function renderYear(): void {
+  const el = document.getElementById("yr");
+  if (el) el.textContent = new Date().getFullYear().toString();
+}
+
+// ===================== RENDER ALL =====================
+
+export function renderAll(): void {
+  renderNews();
+  renderEventFilters();
+  renderCompetitions();
+  renderBearers();
+  renderTeamSections();
+  renderDepartments();
+  renderYear();
+}
+
+// ===================== ROUTER =====================
+
+export function initRouter(): void {
+  function showPage(id: string): void {
+    if (!PAGES.includes(id)) id = "home";
+    PAGES.forEach(p => {
+      const pageEl = document.getElementById("page-" + p);
+      if (pageEl) pageEl.classList.toggle("active", p === id);
+    });
+    document.querySelectorAll<HTMLElement>(".nav-link").forEach(a => {
+      a.classList.toggle("active", a.dataset.page === id);
+    });
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+
+  document.querySelectorAll<HTMLElement>("[data-page]").forEach(el => {
+    el.addEventListener("click", (e: Event) => {
+      e.preventDefault();
+      const id = el.dataset.page || "home";
+      try { history.pushState(null, "", "#" + id); } catch (_) {
+        try { location.hash = "#" + id; } catch (_2) { /* noop */ }
+      }
+      showPage(id);
+    });
+  });
+
+  window.addEventListener("popstate", () => showPage(location.hash.replace("#", "")));
+  showPage(location.hash.replace("#", "") || "home");
+}
+
+// ===================== MOBILE NAVIGATION =====================
+
+export function initMobileNav(): void {
+  const navToggle = document.getElementById("navToggle");
+  const siteNav = document.getElementById("siteNav");
+
+  if (!navToggle || !siteNav) return;
+
+  navToggle.addEventListener("click", (e: Event) => {
+    e.stopPropagation();
+    const isOpen = siteNav.classList.toggle("open");
+    navToggle.classList.toggle("open", isOpen);
+    document.body.classList.toggle("nav-open", isOpen);
+  });
+
+  // Close menu when a navigation link or CTA button is clicked
+  siteNav.addEventListener("click", (e: Event) => {
+    const target = (e.target as HTMLElement).closest(".nav-link, .mobile-btn");
+    if (target) {
+      navToggle.classList.remove("open");
+      siteNav.classList.remove("open");
+      document.body.classList.remove("nav-open");
+    }
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener("click", (e: Event) => {
+    if (!siteNav.contains(e.target as Node) && !navToggle.contains(e.target as Node)) {
+      navToggle.classList.remove("open");
+      siteNav.classList.remove("open");
+      document.body.classList.remove("nav-open");
+    }
+  });
+}
