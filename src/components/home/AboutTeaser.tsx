@@ -17,11 +17,14 @@ export const AboutTeaser: React.FC<AboutTeaserProps> = ({ onNavigate }) => {
               <span className="text-signal">A proving ground.</span>
             </h2>
             <p className="ref-about-copy">
-              Velocity SAE brings ambitious students together to solve real engineering problems. From first sketch to
+              SAE brings ambitious students together to solve real engineering problems. From first sketch to
               final test run, every project is a chance to apply theory, challenge assumptions, and grow as a team.
             </p>
             <p className="ref-about-copy" style={{ marginTop: '1rem', opacity: 0.85 }}>
-              As the official collegiate mobility chapter of BIT Sindri, our student engineers design national competition racecars, build electric powertrains, and conduct hands-on technical masterclasses.
+              As the official collegiate mobility chapter of BIT Sindri, our student engineers design national competition racecars, drones, fixed wing aircrafts, build electric powertrains, and conduct hands-on technical masterclasses.
+            </p>
+            <p className="ref-about-copy" style={{ marginTop: '1rem', opacity: 0.85 }}>
+              Apart from that, we do organise various events in the college which includes - Technical Workshops, GD, Techfest(Tvaran).
             </p>
             <a
               href="#about"
@@ -53,7 +56,7 @@ export const AboutTeaser: React.FC<AboutTeaserProps> = ({ onNavigate }) => {
 
           <div data-reveal className="reveal-up reveal-delay ref-stats-grid">
             <div className="ref-stat-box">
-              <strong className="ref-stat-value">120+</strong>
+              <strong className="ref-stat-value">70+</strong>
               <span className="ref-stat-label">Active members</span>
             </div>
             <div className="ref-stat-box">
@@ -61,11 +64,11 @@ export const AboutTeaser: React.FC<AboutTeaserProps> = ({ onNavigate }) => {
               <span className="ref-stat-label">Technical teams</span>
             </div>
             <div className="ref-stat-box">
-              <strong className="ref-stat-value">16</strong>
+              <strong className="ref-stat-value">10</strong>
               <span className="ref-stat-label">Projects completed</span>
             </div>
             <div className="ref-stat-box">
-              <strong className="ref-stat-value">06</strong>
+              <strong className="ref-stat-value">15+</strong>
               <span className="ref-stat-label">Years of making</span>
             </div>
           </div>

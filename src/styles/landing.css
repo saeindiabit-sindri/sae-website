@@ -17,7 +17,8 @@
 
 #page-home,
 #page-about,
-#page-team {
+#page-team,
+#page-competitions {
   max-width: 100% !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -1276,7 +1277,7 @@
   justify-content: center;
   padding: 3rem 0;
   background: radial-gradient(circle at 50% 50%, rgba(246, 183, 25, 0.03), transparent 70%),
-              rgba(6, 7, 10, 0.5);
+    rgba(6, 7, 10, 0.5);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -1323,7 +1324,8 @@
   width: 100%;
   display: flex;
   user-select: none;
-  padding: 0.75rem 0; /* Ample headroom so hover lift and glow never clip */
+  padding: 0.75rem 0;
+  /* Ample headroom so hover lift and glow never clip */
 }
 
 .sponsors-marquee-track {
@@ -1345,7 +1347,8 @@
   display: flex;
   align-items: center;
   flex-shrink: 0;
-  gap: 1.35rem; /* Increased horizontal breathing room between cards */
+  gap: 1.35rem;
+  /* Increased horizontal breathing room between cards */
   padding-right: 1.35rem;
 }
 
@@ -1353,6 +1356,7 @@
   0% {
     transform: translate3d(0, 0, 0);
   }
+
   100% {
     transform: translate3d(-50%, 0, 0);
   }
@@ -1374,9 +1378,9 @@
   box-sizing: border-box;
   flex-shrink: 0;
   transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1),
-              border-color 0.25s ease,
-              box-shadow 0.25s ease,
-              background-color 0.25s ease;
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
   backdrop-filter: blur(8px);
 }
 
@@ -1504,6 +1508,7 @@
 }
 
 @media (max-width: 768px) {
+
   .ref-glimpses-section::before,
   .ref-glimpses-section::after {
     width: 60px;
@@ -1525,7 +1530,8 @@
   width: 100%;
   display: flex;
   user-select: none;
-  padding: 0.65rem 0; /* Headroom so hover scale & shadows never clip */
+  padding: 0.65rem 0;
+  /* Headroom so hover scale & shadows never clip */
 }
 
 .glimpses-marquee-track {
@@ -1558,6 +1564,7 @@
   0% {
     transform: translate3d(0, 0, 0);
   }
+
   100% {
     transform: translate3d(-50%, 0, 0);
   }
@@ -1567,6 +1574,7 @@
   0% {
     transform: translate3d(-50%, 0, 0);
   }
+
   100% {
     transform: translate3d(0, 0, 0);
   }
@@ -1588,8 +1596,8 @@
   transform: translateZ(0);
   backface-visibility: hidden;
   transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
-              border-color 0.25s ease,
-              box-shadow 0.28s ease;
+    border-color 0.25s ease,
+    box-shadow 0.28s ease;
 }
 
 .glimpse-card:hover {
@@ -1616,12 +1624,10 @@
 .glimpse-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(3, 4, 6, 0.05) 0%,
-    rgba(3, 4, 6, 0.3) 45%,
-    rgba(3, 4, 6, 0.92) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(3, 4, 6, 0.05) 0%,
+      rgba(3, 4, 6, 0.3) 45%,
+      rgba(3, 4, 6, 0.92) 100%);
   pointer-events: none;
   transition: opacity 0.3s ease;
 }
@@ -1666,9 +1672,11 @@
     width: 275px;
     height: 185px;
   }
+
   .glimpse-title {
     font-size: 0.92rem;
   }
+
   .ref-glimpses-section {
     padding: 4rem 0 4.5rem;
   }
@@ -2531,7 +2539,7 @@
 .about-hero-wrap {
   border-bottom: 1px solid rgba(255, 255, 255, 0.12);
   background: radial-gradient(circle at 15% 20%, rgba(246, 183, 25, 0.08), transparent 45%),
-              linear-gradient(180deg, rgba(20, 24, 33, 0.95) 0%, rgba(10, 14, 20, 0.98) 100%);
+    linear-gradient(180deg, rgba(20, 24, 33, 0.95) 0%, rgba(10, 14, 20, 0.98) 100%);
   padding: 4.5rem 0 3.5rem;
 }
 
@@ -3271,12 +3279,10 @@
   bottom: 0;
   left: 27px;
   width: 2px;
-  background: linear-gradient(
-    180deg,
-    rgba(246, 183, 25, 0.8) 0%,
-    rgba(246, 183, 25, 0.45) 50%,
-    rgba(255, 255, 255, 0.12) 100%
-  );
+  background: linear-gradient(180deg,
+      rgba(246, 183, 25, 0.8) 0%,
+      rgba(246, 183, 25, 0.45) 50%,
+      rgba(255, 255, 255, 0.12) 100%);
   box-shadow: 0 0 12px rgba(246, 183, 25, 0.25);
   pointer-events: none;
   z-index: 1;
@@ -3319,6 +3325,7 @@
 }
 
 @media (max-width: 1023px) {
+
   .dbc-pipeline-step,
   .dbc-pipeline-step[data-index="0"],
   .dbc-pipeline-step[data-index="1"],
@@ -3436,6 +3443,7 @@
   .dbc-card-top-bar {
     margin-bottom: 0.4rem;
   }
+
   .dbc-card-top-bar .badge {
     font-size: 0.65rem;
     padding: 0.22rem 0.5rem;
@@ -3580,6 +3588,7 @@
     gap: 0.3rem;
     margin-bottom: 1rem;
   }
+
   .dbc-card-tags .ref-skill-pill {
     font-size: 0.64rem;
     padding: 0.22rem 0.5rem;

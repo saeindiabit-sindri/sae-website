@@ -3,6 +3,7 @@ import './styles/main.css';
 import './styles/landing.css';
 import './styles/intro.css';
 import './styles/events.css';
+import './styles/competitions.css';
 
 import { IntroOverlay } from './components/intro/IntroOverlay';
 import { Navbar } from './components/layout/Navbar';
@@ -141,7 +142,7 @@ export const App: React.FC = () => {
       <main>
         <HomePage isActive={currentPage === 'home'} onNavigate={navigateTo} />
         <AboutPage isActive={currentPage === 'about'} onNavigate={navigateTo} />
-        <CompetitionsPage isActive={currentPage === 'competitions'} />
+        <CompetitionsPage isActive={currentPage === 'competitions'} onNavigate={navigateTo} />
         <EventsPage isActive={currentPage === 'events'} />
         <TeamPage isActive={currentPage === 'team'} onNavigate={navigateTo} />
         <SponsorsPage isActive={currentPage === 'sponsors'} />

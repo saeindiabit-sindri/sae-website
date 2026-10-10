@@ -36,34 +36,39 @@ export const AboutPage: React.FC<AboutPageProps> = ({ isActive, onNavigate }) =>
         <div className="ref-container">
           <div className="about-story-grid">
             <div data-reveal className="reveal-up about-story-text">
-              <span className="badge mono">// OUR ROOTS &amp; MISSION</span>
+              <span className="badge mono" style={{ borderColor: 'rgba(246, 183, 25, 0.45)', color: 'var(--color-signal)' }}>
+                // OUR ROOTS &amp; MISSION
+              </span>
               <h2>Born in the Workshop. Proven on the Track.</h2>
               <p>
-                SAE India BIT Sindri represents the pinnacle of multidisciplinary engineering at Birsa Institute of Technology, Sindri. What began as a passionate cohort of gearheads has evolved into an advanced collegiate engineering division building national competition buggies, Formula-class racecars, electric propulsion systems, and unmanned aerial platforms.
+                SAE India BIT Sindri brings together passionate engineering students who believe in learning by doing. What started as a group of students interested in automobiles and engineering has grown into a team working on exciting projects such as BAJA, SUPRA and EFFICYCLE.
               </p>
               <p>
-                Here, students don’t just read about finite element analysis, suspension kinematics, or battery thermal management—they calculate, simulate, weld, machine, wire, and test them until competition day.
+                At SAE, learning goes beyond textbooks and classrooms. Students get hands-on experience in designing, building, testing, and improving their projects. From understanding vehicle dynamics and powertrains to working with CAD software, welding, machining, and electrical systems, members learn how engineering works in real life.
               </p>
-              <div className="about-principles-grid">
+              <h3 style={{ fontSize: '1.25rem', fontFamily: 'var(--font-display)', textTransform: 'uppercase', color: '#ffffff', marginTop: '2.25rem', marginBottom: '1.25rem', letterSpacing: '0.04em' }}>
+                Our Key Focus Areas
+              </h3>
+              <div className="about-principles-grid" style={{ marginTop: '0' }}>
                 <div className="about-principle-item">
                   <div className="about-principle-num">01</div>
-                  <h4>Engineering Rigor</h4>
-                  <p>Every tube, weld, and sensor is validated with CAD, FEA, and telemetry data before taking to the track.</p>
+                  <h4>Engineering Excellence</h4>
+                  <p>We focus on building reliable and efficient machines. Every component, whether it is a tube, weld, or sensor, is carefully designed and tested using tools such as CAD and FEA.</p>
                 </div>
                 <div className="about-principle-item">
                   <div className="about-principle-num">02</div>
-                  <h4>Cross-Discipline Synergy</h4>
-                  <p>Mechanical, Electrical, Electronics, CS, and Mining students collaborating as one synchronized crew.</p>
+                  <h4>Teamwork Across Disciplines</h4>
+                  <p>SAE brings together students from Mechanical, Electrical, Electronics, Computer Science, and Mining Engineering. Everyone contributes their knowledge and skills to work towards a common goal.</p>
                 </div>
                 <div className="about-principle-item">
                   <div className="about-principle-num">03</div>
-                  <h4>Next-Gen Clean Tech</h4>
-                  <p>Pioneering electric vehicles, hybrid powertrains, and smart telemetry to lead sustainable mobility.</p>
+                  <h4>Innovation and Clean Technology</h4>
+                  <p>We encourage students to explore electric vehicles, hybrid powertrains, and smart monitoring systems. We aim to develop innovative solutions that support cleaner and more sustainable transportation.</p>
                 </div>
                 <div className="about-principle-item">
                   <div className="about-principle-num">04</div>
-                  <h4>Student Leadership</h4>
-                  <p>Full project ownership: budgeting, corporate sponsor management, logistics, and technical documentation.</p>
+                  <h4>Leadership and Project Management</h4>
+                  <p>Members learn more than technical skills. They also get opportunities to manage projects, plan budgets, coordinate logistics, communicate with sponsors, and handle technical documentation.</p>
                 </div>
               </div>
             </div>
@@ -74,7 +79,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ isActive, onNavigate }) =>
                 <div className="about-card-badge mono">// BY THE NUMBERS</div>
                 <div className="about-numbers-stack">
                   <div className="about-num-row">
-                    <span className="about-big-num">120<span className="text-signal">+</span></span>
+                    <span className="about-big-num">70<span className="text-signal">+</span></span>
                     <span className="about-num-desc">Active Student Members across engineering disciplines</span>
                   </div>
                   <div className="about-num-row">
@@ -82,11 +87,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ isActive, onNavigate }) =>
                     <span className="about-num-desc">Specialized Technical Sub-Teams (Chassis, Powertrain, EV, Aero, etc.)</span>
                   </div>
                   <div className="about-num-row">
-                    <span className="about-big-num">16<span className="text-signal">+</span></span>
+                    <span className="about-big-num">10<span className="text-signal">+</span></span>
                     <span className="about-num-desc">Competition Vehicles &amp; Hardware Projects Built</span>
                   </div>
                   <div className="about-num-row">
-                    <span className="about-big-num">06<span className="text-signal">+</span></span>
+                    <span className="about-big-num">15<span className="text-signal">+</span></span>
                     <span className="about-num-desc">Years of Continuous Collegiate Racing &amp; Innovation</span>
                   </div>
                 </div>
@@ -115,64 +120,64 @@ export const AboutPage: React.FC<AboutPageProps> = ({ isActive, onNavigate }) =>
             <article data-reveal className="reveal-up pillar-card">
               <div className="pillar-card-top">
                 <span className="pillar-num">01</span>
-                <span className="pillar-badge mono">DESIGN &amp; FABRICATION</span>
+                <span className="pillar-badge mono">OFF-ROAD MOBILITY</span>
               </div>
-              <h3 className="pillar-title">CAD, Simulation &amp; Manufacturing</h3>
+              <h3 className="pillar-title">BAJA SAE India</h3>
               <p className="pillar-desc">
-                From generative CAD modeling and structural FEA to CNC turning, TIG/MIG welding, and carbon-fiber composite layup. Our members engineer race-grade spaceframe chassis, custom uprights, steering racks, and aerodynamic elements from scratch.
+                Designing and developing an all-terrain vehicle to compete in the BAJA SAE India competition. Our team focuses on vehicle dynamics, chassis design, suspension geometry, and performance optimization.
               </p>
               <ul className="pillar-features">
-                <li>SolidWorks, CATIA &amp; ANSYS structural analysis</li>
-                <li>Custom suspension geometry &amp; roll center optimization</li>
-                <li>In-house chassis fabrication, welding &amp; precision assembly</li>
+                <li>All-terrain vehicle design and fabrication</li>
+                <li>Suspension, steering, and braking systems</li>
+                <li>Vehicle testing and performance optimization</li>
               </ul>
             </article>
 
             <article data-reveal className="reveal-up reveal-delay pillar-card">
               <div className="pillar-card-top">
                 <span className="pillar-num">02</span>
-                <span className="pillar-badge mono">CLEAN MOBILITY</span>
+                <span className="pillar-badge mono">ALL-TERRAIN ENGINEERING</span>
               </div>
-              <h3 className="pillar-title">EV Systems &amp; Advanced Powertrain</h3>
+              <h3 className="pillar-title">Quad Torc</h3>
               <p className="pillar-desc">
-                Spearheading the electric transition in collegiate motorsport. We engineer custom high-voltage lithium-ion battery packs, intelligent Battery Management Systems (BMS), motor controller parameter tuning, and real-time CAN bus telemetry.
+                Building a rugged quad vehicle engineered for durability, stability, and off-road performance. Our team emphasizes efficient design, robust fabrication, and reliable vehicle dynamics.
               </p>
               <ul className="pillar-features">
-                <li>High-voltage battery thermal management &amp; cell balancing</li>
-                <li>Custom motor tuning &amp; regenerative braking logic</li>
-                <li>Wireless telemetry dashboards &amp; trackside diagnostics</li>
+                <li>Quad vehicle design and fabrication</li>
+                <li>Chassis strength and suspension tuning</li>
+                <li>Testing, handling, and terrain adaptability</li>
               </ul>
             </article>
 
             <article data-reveal className="reveal-up pillar-card">
               <div className="pillar-card-top">
                 <span className="pillar-num">03</span>
-                <span className="pillar-badge mono">EDUCATION &amp; WORKSHOPS</span>
+                <span className="pillar-badge mono">AERIAL SYSTEMS</span>
               </div>
-              <h3 className="pillar-title">Workshops &amp; Engineering Bootcamps</h3>
+              <h3 className="pillar-title">Aerothon</h3>
               <p className="pillar-desc">
-                Fostering technical literacy beyond the workshop. We host hands-on workshops for hundreds of campus students covering vehicle dynamics, automotive electronics, microcontroller coding, industrial CAD, and motorsport safety protocols.
+                Developing innovative aerial systems through aerodynamic design, drone integration, and performance testing. Our team explores UAV technology, flight stability, and practical engineering solutions.
               </p>
               <ul className="pillar-features">
-                <li>Annual campus-wide CAD &amp; EV design masterclasses</li>
-                <li>Hands-on welding, telemetry, and wiring bootcamps</li>
-                <li>Senior-to-junior engineering mentorship programs</li>
+                <li>UAV design and system integration</li>
+                <li>Aerodynamics and flight stability</li>
+                <li>Drone testing and performance evaluation</li>
               </ul>
             </article>
 
             <article data-reveal className="reveal-up reveal-delay pillar-card">
               <div className="pillar-card-top">
                 <span className="pillar-num">04</span>
-                <span className="pillar-badge mono">MANAGEMENT &amp; MEDIA</span>
+                <span className="pillar-badge mono">ENERGY-EFFICIENT MOBILITY</span>
               </div>
-              <h3 className="pillar-title">Operations, Sponsorship &amp; Media</h3>
+              <h3 className="pillar-title">Effi-Cycle</h3>
               <p className="pillar-desc">
-                Running a championship team demands commercial excellence. Our operations division drives corporate sponsorship proposals, financial auditing, inventory procurement, event logistics, documentary cinematography, and digital outreach.
+                Designing and fabricating an energy-efficient human-electric hybrid vehicle focused on sustainability, lightweight construction, and innovative mobility solutions.
               </p>
               <ul className="pillar-features">
-                <li>Corporate sponsor pitches &amp; CSR partnership development</li>
-                <li>Budget management, supply chain &amp; part procurement</li>
-                <li>Digital brand identity, media coverage &amp; public relations</li>
+                <li>Lightweight chassis design and fabrication</li>
+                <li>Energy-efficient drivetrain optimization</li>
+                <li>Vehicle testing and efficiency improvement</li>
               </ul>
             </article>
           </div>
@@ -185,9 +190,8 @@ export const AboutPage: React.FC<AboutPageProps> = ({ isActive, onNavigate }) =>
           <div data-reveal className="reveal-up about-affiliation-card">
             <div className="about-affil-content">
               <div className="about-affil-badges">
-                <span className="badge mono">NATIONAL AFFILIATION</span>
-                <span className="badge mono" style={{ borderColor: 'rgba(246, 183, 25, 0.4)', color: 'var(--color-signal)' }}>
-                  SAEINDIA CHAPTER #3281
+                <span className="badge mono" style={{ borderColor: 'rgba(246, 183, 25, 0.45)', color: 'var(--color-signal)' }}>
+                  OUR AFFILIATION
                 </span>
               </div>
               <h2 className="about-affil-title">Backed by SAEINDIA &amp; BIT Sindri</h2>
@@ -230,7 +234,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ isActive, onNavigate }) =>
                 onNavigate('join');
               }}
             >
-              Join Velocity SAE
+              Join SAE BIT SINDRI
               <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14" />
                 <path d="m13 6 6 6-6 6" />

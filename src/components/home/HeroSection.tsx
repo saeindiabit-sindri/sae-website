@@ -94,8 +94,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
           </h1>
 
           <p className="hero-enter hero-delay-3 hero-subtext">
-            From the first line on screen to the final lap on track, we are a student-led
-            community turning engineering ideas into machines that perform.
+            From initial concepts to the final lap on the track or the ascent into the skies, we’re turning engineering ideas into high-performance machines, be it on wheels or wings.
           </p>
 
           <div className="hero-enter hero-delay-4 hero-cta-row">

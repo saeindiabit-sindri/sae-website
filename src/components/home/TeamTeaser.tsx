@@ -11,8 +11,9 @@ export const TeamTeaser: React.FC<TeamTeaserProps> = ({ onNavigate }) => {
         <div className="ref-team-grid">
           <div data-reveal className="reveal-up image-frame group">
             <img
-              src="https://images.unsplash.com/photo-1700770956485-87150c75ad65?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&q=85&w=1800"
-              alt="Club members working together in the garage"
+              src="/extra/IMG_1458.webp"
+              alt="SAE BIT Sindri collegiate team members"
+              style={{ objectPosition: 'center 62%' }}
             />
             <div className="image-frame-overlay"></div>
             <div className="image-frame-caption">
@@ -51,6 +52,7 @@ export const TeamTeaser: React.FC<TeamTeaserProps> = ({ onNavigate }) => {
               <span className="ref-skill-pill">Vehicle Dynamics</span>
               <span className="ref-skill-pill">Powertrain</span>
               <span className="ref-skill-pill">Electronics</span>
+              <span className="ref-skill-pill">Avionics</span>
               <span className="ref-skill-pill">Design</span>
               <span className="ref-skill-pill">Business</span>
               <span className="ref-skill-pill">Media</span>

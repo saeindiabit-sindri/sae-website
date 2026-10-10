@@ -22,7 +22,7 @@ export const JoinTeaser: React.FC<JoinTeaserProps> = ({ onNavigate }) => {
             onNavigate('join');
           }}
         >
-          Join Velocity SAE
+          Join SAE BIT SINDRI
           <svg
             width="18"
             height="18"

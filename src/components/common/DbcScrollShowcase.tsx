@@ -213,10 +213,10 @@ export const DbcScrollShowcase: React.FC = () => {
                 <p className="ref-eyebrow text-signal">// THE VELOCITY CYCLE</p>
               </div>
               <h2 className="dbc-heading">
-                From Concept <span className="text-signal">to the Track.</span>
+                On track <span className="text-signal">or in the skies.</span>
               </h2>
               <p className="dbc-sidebar-desc">
-                Every racecar is an engineering masterclass. From computational simulation to precision workshop fabrication and national track warfare, here is our full lifecycle.
+                Every machine whether it’s a racecar or an aircraft is an engineering masterclass. From computational simulations and CAD modeling to ANSYS analysis and MATLAB-based flight simulations, here is our full cycle.
               </p>
 
               {/* Navigation Phase Pills */}
@@ -276,13 +276,14 @@ export const DbcScrollShowcase: React.FC = () => {
                   <h3 className="dbc-card-title">
                     Design<span className="text-signal">.</span>
                   </h3>
-                  <p className="dbc-card-subtitle">Virtual Kinematics &amp; High-Downforce Aerodynamics</p>
+                  <p className="dbc-card-subtitle">Virtual Kinematics &amp; Aerodynamics</p>
                   <p className="dbc-card-desc">
-                    Every championship machine begins in the digital wind tunnel. Our student engineering cohort uses SolidWorks, CATIA, and ANSYS to run structural FEA, calculate suspension kinematics, optimize spaceframe torsional rigidity, and simulate multi-element aerodynamic downforce before a single tube is cut.
+                    Every championship machine begins digitally. Our student engineering cohort uses SolidWorks, MATLAB and ANSYS to run structural FEA, calculate suspension kinematics, optimize spaceframe torsional rigidity, and simulate multi-element aerodynamic downforce before a single tube is cut.
                   </p>
                   <div className="dbc-card-tags">
                     <span className="ref-skill-pill">SolidWorks CAD</span>
                     <span className="ref-skill-pill">ANSYS Structural FEA</span>
+                    <span className="ref-skill-pill">MATLAB</span>
                     <span className="ref-skill-pill">CFD Aerodynamics</span>
                     <span className="ref-skill-pill">Suspension Geometry</span>
                     <span className="ref-skill-pill">Weight Optimization</span>
@@ -318,15 +319,13 @@ export const DbcScrollShowcase: React.FC = () => {
                   <h3 className="dbc-card-title">
                     Build<span className="text-signal">.</span>
                   </h3>
-                  <p className="dbc-card-subtitle">Precision Machining, 4130 TIG Welding &amp; EV Integration</p>
+                  <p className="dbc-card-subtitle">Precision Machining, Welding, Grading and Hardware Integration</p>
                   <p className="dbc-card-desc">
-                    On the workshop floor of BIT Sindri, blueprints become roaring machines. Our student engineers execute in-house CNC lathe turning, precision 4130 chromoly spaceframe TIG welding, custom carbon fiber composite molding, custom wiring harnesses, and high-voltage lithium battery pack integration.
+                    On the workshop floor of the BIT Sindri, blueprints become roaring machines. Our student engineers execute in-house CNC lathe turning, Welding, Cutting, Electronics integration and also fabricate customized airframes.
                   </p>
                   <div className="dbc-card-tags">
                     <span className="ref-skill-pill">Chromoly TIG Welding</span>
                     <span className="ref-skill-pill">In-House CNC Machining</span>
-                    <span className="ref-skill-pill">Carbon Fiber Layup</span>
-                    <span className="ref-skill-pill">HV Battery Packaging</span>
                     <span className="ref-skill-pill">CAN Bus Telemetry</span>
                   </div>
                   <div className="dbc-card-footer">
@@ -360,9 +359,9 @@ export const DbcScrollShowcase: React.FC = () => {
                   <h3 className="dbc-card-title">
                     Compete<span className="text-signal">.</span>
                   </h3>
-                  <p className="dbc-card-subtitle">National Championships, Acceleration &amp; 4-Hour Endurance</p>
+                  <p className="dbc-card-subtitle">National Championships, Acceleration &amp; Hours of Endurance</p>
                   <p className="dbc-card-desc">
-                    The ultimate proving ground where machines and student grit are tested under maximum pressure. We campaign our student-engineered vehicles against 100+ universities across India at BAJA SAEINDIA, Formula Bharat, and Mega ATV Championship—surviving high-G cornering and grueling 4-hour endurance battles.
+                    The ultimate proving ground where machines and student grit are tested under maximum pressure. We campaign our student-engineered machines against 100+ universities across India at BAJA SAEINDIA, Formula Bharat, FKDC, AEROTHON, Laws Of Motion and Mega Championship—driving the machines accordingly, surviving high-G cornering, stability of machines and grueling hours of endurance battles.
                   </p>
                   <div className="dbc-card-tags">
                     <span className="ref-skill-pill">BAJA SAEINDIA</span>

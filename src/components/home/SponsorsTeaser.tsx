@@ -39,7 +39,7 @@ export const SponsorsTeaser: React.FC<SponsorsTeaserProps> = ({ onNavigate }) =>
               <span className="text-signal">Built for Victory.</span>
             </h2>
             <p className="ref-sponsors-copy">
-              From high-precision CAD suites and structural FEA software to aerospace-grade 4130 chromoly and track-proven racing rubber, our corporate and technical partners equip our student engineers with industrial tools to build championship machines.
+              From high-precision CAD suites and structural FEA software to high-grade steel and track-proven racing rubber, our corporate and technical partners equip our student engineers with industrial tools to build championship machines.
             </p>
             <div className="ref-sponsors-actions">
               <a

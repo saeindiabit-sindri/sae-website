@@ -237,8 +237,8 @@ export class CarFollower3D {
   // ===================== 3D CAR MODEL CONSTRUCTION =====================
 
   private buildCarModel(): void {
-    // Compact scale (~26px on screen)
-    const scaleFactor = 0.72;
+    // Compact scale (~23px on screen)
+    const scaleFactor = 0.63;
     this.carRoot.scale.set(scaleFactor, scaleFactor, scaleFactor);
 
     // Materials
@@ -689,16 +689,26 @@ export class CarFollower3D {
     this.rightFlameMesh.scale.set(intensity * (1.2 + Math.random() * 0.5), intensity * jitter, intensity * jitter);
   }
 
+  // ===================== PERSPECTIVE SCALE COMPENSATION =====================
+  // In a 3D perspective camera (height 520, z 340, looking at origin),
+  // moving down the screen brings the car closer to the camera, creating perspective
+  // foreshortening/enlargement. We dynamically adjust 3D scale so on-screen pixel size
+  // stays perfectly uniform across the entire viewport.
+  private updateCarScale(): void {
+    const base = this.isMobile ? 0.32 : 0.63;
+    // Camera plane depth: depth(z) = 621.28898 - 0.54724933 * carPos.z
+    // where 621.28898 is the camera depth at viewport center (0, 0, 0).
+    const depth = 621.28898 - 0.54724933 * this.carPos.z;
+    const scaleRatio = THREE.MathUtils.clamp(depth / 621.28898, 0.45, 1.75);
+    const scale = base * scaleRatio;
+    this.carRoot.scale.set(scale, scale, scale);
+  }
+
   // ===================== MOBILE SCROLL PROGRESS TRACK RUNNER =====================
 
   private updateDeviceMode(): void {
     this.isMobile = window.innerWidth < 1024 || window.matchMedia('(pointer: coarse)').matches;
-    if (this.isMobile) {
-      // Significantly smaller micro car (~35px, 0.36x scale)
-      this.carRoot.scale.set(0.36, 0.36, 0.36);
-    } else {
-      this.carRoot.scale.set(0.72, 0.72, 0.72);
-    }
+    this.updateCarScale();
   }
 
   private bindMobileElements(): void {
@@ -743,6 +753,7 @@ export class CarFollower3D {
     if (targetWorld) {
       this.carPos.copy(targetWorld);
       this.carRoot.position.set(this.carPos.x, 0, this.carPos.z);
+      this.updateCarScale();
     }
 
     this.headingAngle = 0;
@@ -1042,6 +1053,7 @@ export class CarFollower3D {
 
       this.carRoot.position.set(this.carPos.x, 0, this.carPos.z);
       this.carRoot.rotation.y = -this.headingAngle;
+      this.updateCarScale();
 
       if (this.headlightLeft && this.headlightRight) {
         this.headlightLeft.intensity = 0.15;
@@ -1112,6 +1124,7 @@ export class CarFollower3D {
       this.carPos.add(this.carVel);
       this.carRoot.position.set(this.carPos.x, 0, this.carPos.z);
       this.carRoot.rotation.y = -this.headingAngle;
+      this.updateCarScale();
 
       const wheelRot = this.speed * 0.36;
       this.frontLeftWheelMesh.rotation.z -= wheelRot;
@@ -1240,6 +1253,7 @@ export class CarFollower3D {
     // Apply to Three.js object
     this.carRoot.position.set(this.carPos.x, 0, this.carPos.z);
     this.carRoot.rotation.y = -this.headingAngle;
+    this.updateCarScale();
 
     // Dynamic underglow
     if (this.underglowLight) {
@@ -1262,7 +1276,7 @@ export class CarFollower3D {
       // Skip if movement is too small to avoid degenerate overlapping quads
       if (dist < 0.25) return;
 
-      const tireWidth = 1.2;
+      const tireWidth = 1.2 * (this.carRoot.scale.x / 0.63);
       const cosH = Math.cos(-this.headingAngle);
       const sinH = Math.sin(-this.headingAngle);
       const perpX = -sinH * (tireWidth / 2);
