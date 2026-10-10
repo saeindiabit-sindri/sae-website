@@ -132,7 +132,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate }) => {
                 onNavigate('about');
               }}
             >
-              Explore our club
+              Explore our Society
             </a>
           </div>
         </div>

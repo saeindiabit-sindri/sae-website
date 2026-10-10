@@ -26,21 +26,21 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   '0 0 0 2px var(--color-ink), 0 0 0 4px rgba(255, 255, 255, 0.3)',
               }}
             >
-              <img src="/bit-sindri-sae-logo.png" alt="SAE BIT Sindri Club Logo" />
+              <img src="/bit-sindri-sae-logo.png" alt="SAE BIT Sindri Society Logo" />
             </span>
             <span className="ref-brand-text">
               <span className="ref-brand-title">SAE BIT Sindri</span>
-              <span className="ref-brand-sub">Collegiate Club</span>
+              <span className="ref-brand-sub">Collegiate Society</span>
             </span>
           </a>
           <p className="ref-footer-desc">
-            The SAE collegiate club of BIT Sindri, built by students who believe the
+            The SAE collegiate society of BIT Sindri, built by students who believe the
             best way to learn engineering is to engineer.
           </p>
         </div>
         <div className="ref-footer-right">
-          <a href="mailto:saeclub@college.edu" className="ref-footer-email">
-            saeclub@college.edu
+          <a href="mailto:saeindiabitsindri@gmail.com" className="ref-footer-email">
+            saeindiabitsindri@gmail.com
           </a>
           <p className="ref-footer-copy">
             © {new Date().getFullYear()} SAE BIT Sindri · Made to move forward

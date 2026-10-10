@@ -196,7 +196,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ isActive, onNavigate }) =>
               </div>
               <h2 className="about-affil-title">Backed by SAEINDIA &amp; BIT Sindri</h2>
               <p className="about-affil-text">
-                SAE India BIT Sindri is an officially recognized Collegiate Chapter under the Eastern Section of SAEINDIA, affiliated with SAE International. Hosted at <strong>Birsa Institute of Technology (BIT) Sindri</strong>—a premier state government engineering institution established in 1949—the club operates with faculty mentorship from the Department of Mechanical Engineering and institutional backing from institute leadership.
+                SAE India BIT Sindri is an officially recognized Collegiate Chapter under the Eastern Section of SAEINDIA, affiliated with SAE International. Hosted at <strong>Birsa Institute of Technology (BIT) Sindri</strong>—a premier state government engineering institution established in 1949—the society operates with faculty mentorship from the Department of Mechanical Engineering and institutional backing from institute leadership.
               </p>
               <div className="about-affil-meta-row">
                 <div className="affil-meta-item">

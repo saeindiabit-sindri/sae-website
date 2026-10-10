@@ -1,10 +1,10 @@
 # SAE India BIT Sindri
 
-Welcome to the official repository of **SAE India Collegiate Club, BIT Sindri**.
+Welcome to the official repository of **SAE India Collegiate Society, BIT Sindri**.
 
 ## About
 
-SAE India BIT Sindri is a student-run collegiate club dedicated to fostering innovation, engineering excellence, and hands-on learning in the field of automotive and aerospace engineering.
+SAE India BIT Sindri is a student-run collegiate society dedicated to fostering innovation, engineering excellence, and hands-on learning in the field of automotive and aerospace engineering.
 
 ## 🚀 What We Do
 

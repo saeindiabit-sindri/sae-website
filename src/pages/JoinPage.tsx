@@ -391,7 +391,7 @@ export const JoinPage: React.FC<JoinPageProps> = ({ isActive }) => {
                   id="applicantMotivation"
                   rows={4}
                   required
-                  placeholder="Tell us about your interests, past projects or hobbies (if any), and what drives you to join our collegiate club..."
+                  placeholder="Tell us about your interests, past projects or hobbies (if any), and what drives you to join our collegiate society..."
                   value={formData.motivation}
                   onChange={(e) => setFormData({ ...formData, motivation: e.target.value })}
                 ></textarea>
@@ -435,7 +435,7 @@ export const JoinPage: React.FC<JoinPageProps> = ({ isActive }) => {
           <h4>Are non-mechanical branches eligible to apply?</h4>
           <p>
             Absolutely! Modern vehicles and drones require electrical systems, battery management, sensors,
-            microcontrollers, embedded code, telemetry, and software — plus our club needs dedicated operations,
+            microcontrollers, embedded code, telemetry, and software — plus our society needs dedicated operations,
             sponsorship, and media leads.
           </p>
         </div>
@@ -447,10 +447,10 @@ export const JoinPage: React.FC<JoinPageProps> = ({ isActive }) => {
           </p>
         </div>
         <div className="faq-card">
-          <h4>Where is the SAE Club workshop located?</h4>
+          <h4>Where is the SAE Society workshop located?</h4>
           <p>
             Our workshop and fabrication bay are situated in the Department of Mechanical Engineering, BIT Sindri
-            campus. You can visit us anytime during club working hours.
+            campus. You can visit us anytime during society working hours.
           </p>
         </div>
       </div>

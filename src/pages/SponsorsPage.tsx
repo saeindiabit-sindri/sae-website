@@ -34,7 +34,7 @@ export const SponsorsPage: React.FC<SponsorsPageProps> = ({ isActive }) => {
         </div>
         <p className="team-subtext">
           Our journey is made possible by the generous support of our sponsors. Meet the industry leaders,
-          technology providers, and institutions backing our collegiate club.
+          technology providers, and institutions backing our collegiate society.
         </p>
       </div>
 

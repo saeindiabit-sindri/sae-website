@@ -12,7 +12,7 @@ export const AboutTeaser: React.FC<AboutTeaserProps> = ({ onNavigate }) => {
           <div data-reveal className="reveal-up ref-about-left">
             <p className="ref-eyebrow">Who we are</p>
             <h2 className="ref-about-heading">
-              More than a club.
+              More than a society.
               <br />
               <span className="text-signal">A proving ground.</span>
             </h2>

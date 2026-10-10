@@ -43,11 +43,11 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
           onClick={(e) => handleLinkClick(e, 'home')}
         >
           <span className="ref-brand-logo-ring nav-logo-hidden" id="navBrandLogoRing">
-            <img src="/bit-sindri-sae-logo.png" alt="SAE BIT Sindri Club Logo" />
+            <img src="/bit-sindri-sae-logo.png" alt="SAE BIT Sindri Society Logo" />
           </span>
           <span className="ref-brand-text">
             <span className="ref-brand-title">SAE BIT Sindri</span>
-            <span className="ref-brand-sub">Collegiate Club</span>
+            <span className="ref-brand-sub">Collegiate Society</span>
           </span>
         </a>
 
@@ -86,7 +86,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
             data-page="join"
             onClick={(e) => handleLinkClick(e, 'join')}
           >
-            Join the club
+            Join the Society
           </a>
 
           <button
@@ -128,7 +128,7 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
               data-page="join"
               onClick={(e) => handleLinkClick(e, 'join')}
             >
-              <span>Join the club</span>
+              <span>Join the Society</span>
               <svg
                 width="16"
                 height="16"
