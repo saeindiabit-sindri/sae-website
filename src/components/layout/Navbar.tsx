@@ -5,6 +5,14 @@ interface NavbarProps {
   onNavigate: (page: string) => void;
 }
 
+const NAV_ITEMS = [
+  { id: 'about', label: 'About' },
+  { id: 'competitions', label: 'Achievements' },
+  { id: 'events', label: 'Events' },
+  { id: 'team', label: 'Team' },
+  { id: 'sponsors', label: 'Sponsors' },
+] as const;
+
 export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -45,15 +53,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
 
         {/* Center navigation links */}
         <nav className="ref-nav ref-nav-center" aria-label="Primary navigation">
-          {(['about', 'competitions', 'events', 'team', 'sponsors'] as const).map((page) => (
+          {NAV_ITEMS.map((item) => (
             <a
-              key={page}
-              href={`#${page}`}
-              className={`ref-nav-link ${currentPage === page ? 'active' : ''}`}
-              data-page={page}
-              onClick={(e) => handleLinkClick(e, page)}
+              key={item.id}
+              href={`#${item.id}`}
+              className={`ref-nav-link ${currentPage === item.id ? 'active' : ''}`}
+              data-page={item.id}
+              onClick={(e) => handleLinkClick(e, item.id)}
             >
-              {page.charAt(0).toUpperCase() + page.slice(1)}
+              {item.label}
             </a>
           ))}
         </nav>
@@ -103,14 +111,14 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
         aria-hidden={!mobileOpen}
       >
         <nav className="ref-mobile-nav-list" aria-label="Mobile navigation">
-          {(['about', 'competitions', 'events', 'team', 'sponsors'] as const).map((page) => (
+          {NAV_ITEMS.map((item) => (
             <a
-              key={page}
-              href={`#${page}`}
-              data-page={page}
-              onClick={(e) => handleLinkClick(e, page)}
+              key={item.id}
+              href={`#${item.id}`}
+              data-page={item.id}
+              onClick={(e) => handleLinkClick(e, item.id)}
             >
-              {page.charAt(0).toUpperCase() + page.slice(1)}
+              {item.label}
             </a>
           ))}
           <div className="ref-mobile-nav-cta">

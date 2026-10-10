@@ -12,9 +12,9 @@ const TRACK_1_ITEMS = [
 const TRACK_2_ITEMS = [
   { img: '/glimpses/workshop.webp', badge: 'WORKSHOP BAY', title: 'Engine Teardown & Mechanics' },
   { img: '/glimpses/workshop2.webp', badge: 'FABRICATION', title: 'Chassis CAD & Metalworking' },
-  { img: '/glimpses/puja.webp', badge: 'TRADITION', title: 'Vishwakarma Puja Ceremonies' },
-  { img: '/glimpses/puja1.webp', badge: 'BAY BLESSING', title: 'Mechanical Blessings at The Bay' },
-  { img: '/glimpses/puja3.webp', badge: 'COMMUNITY', title: 'Annual Chapter Ceremony' },
+  { img: '/events/supra sae 2012.webp', badge: 'SUPRA FORMULA', title: 'National Track Trials & Testing' },
+  { img: '/events/baja sae india 2015.webp', badge: 'BAJA OFF-ROAD', title: 'All-Terrain Vehicle Endurance' },
+  { img: '/events/aerothon 2023.webp', badge: 'AEROSPACE', title: 'Aerothon UAV Flight Dynamics' },
   { img: '/glimpses/puja4.webp', badge: 'CREW UNITY', title: 'The Collegiate Chapter Family' },
 ];
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect, useMemo, useRef, useLayoutEffect } from 'react';
 import { COMPETITION_MILESTONES, type CompetitionMilestone } from '../data';
 
 interface CompetitionsPageProps {
@@ -61,6 +61,53 @@ export const CompetitionsPage: React.FC<CompetitionsPageProps> = ({ isActive, on
     return ((activeIndex + 1) / filteredMilestones.length) * 100;
   }, [activeIndex, filteredMilestones.length]);
 
+  // Dynamic synchronized timeline line geometry (exact pixel measurements to prevent line overshoot)
+  const navListRef = useRef<HTMLDivElement>(null);
+  const [lineGeometry, setLineGeometry] = useState<{
+    left: number;
+    top: number;
+    baseHeight: number;
+    fillHeight: number;
+  }>({ left: 6, top: 12, baseHeight: 0, fillHeight: 0 });
+
+  useLayoutEffect(() => {
+    const updateLine = () => {
+      if (!navListRef.current) return;
+      const buttons = navListRef.current.querySelectorAll<HTMLButtonElement>('.comp-timeline-nav-btn');
+      if (!buttons.length) return;
+
+      const firstBtn = buttons[0];
+      const lastBtn = buttons[buttons.length - 1];
+      const safeActiveIndex = Math.min(Math.max(0, activeIndex), buttons.length - 1);
+      const activeBtn = buttons[safeActiveIndex] || firstBtn;
+
+      const firstDot = firstBtn.querySelector<HTMLElement>('.comp-nav-dot');
+      const dotX = firstDot
+        ? (firstBtn.offsetLeft || 0) + firstDot.offsetLeft + firstDot.offsetWidth / 2
+        : 7;
+
+      const firstDotCenter = firstBtn.offsetTop + firstBtn.offsetHeight / 2;
+      const lastDotCenter = lastBtn.offsetTop + lastBtn.offsetHeight / 2;
+      const activeDotCenter = activeBtn.offsetTop + activeBtn.offsetHeight / 2;
+
+      setLineGeometry({
+        left: dotX,
+        top: firstDotCenter,
+        baseHeight: Math.max(0, lastDotCenter - firstDotCenter),
+        fillHeight: Math.max(0, activeDotCenter - firstDotCenter),
+      });
+    };
+
+    updateLine();
+    const rafId = requestAnimationFrame(updateLine);
+    window.addEventListener('resize', updateLine);
+
+    return () => {
+      cancelAnimationFrame(rafId);
+      window.removeEventListener('resize', updateLine);
+    };
+  }, [filteredMilestones, activeIndex]);
+
   // Category counts
   const categoryCounts = useMemo(() => {
     const counts: Record<string, number> = { All: COMPETITION_MILESTONES.length };
@@ -120,28 +167,32 @@ export const CompetitionsPage: React.FC<CompetitionsPageProps> = ({ isActive, on
         {/* ===================== HERO BANNER ===================== */}
         <section className="comp-hero">
           <div className="comp-hero-inner">
-            <div className="comp-hero-eyebrow-row">
-              <span className="comp-eyebrow-line" />
-              <p className="eyebrow text-signal" style={{ margin: 0 }}>
-                // OUR COMPETITIVE LEGACY
-              </p>
-            </div>
+            <div data-reveal className="reveal-up comp-hero-header-row">
+              <div className="comp-hero-left-col">
+                <div className="team-eyebrow-row">
+                  <span className="team-eyebrow-line" />
+                  <p className="ref-eyebrow text-signal">
+                    // OUR COMPETITIVE LEGACY
+                  </p>
+                </div>
 
-            <h1 className="comp-hero-heading">
-              Fifteen years.
-              <span className="text-signal" style={{ display: 'block' }}>
-                Proven on track &amp; sky.
-              </span>
-            </h1>
+                <h1 className="ref-team-heading comp-hero-title">
+                  Fifteen years.
+                  <span className="text-signal" style={{ display: 'block' }}>
+                    Proven on track &amp; sky.
+                  </span>
+                </h1>
+              </div>
 
-            <div className="comp-hero-meta-bar">
-              <p className="comp-hero-desc">
-                From our first national podium in 2011 to multidisciplinary aerial and automotive championship
-                finals. Explore our journey across 14 milestones spanning BAJA, SUPRA, Quad Torc, Aerothon, Effi-Cycle, and Laws of Motion.
-              </p>
-              <span className="comp-hero-stats-badge">
-                14 National Milestones · 2011—2026
-              </span>
+              <div className="comp-hero-right-col">
+                <p className="team-subtext comp-hero-desc">
+                  From our first national podium in 2011 to multidisciplinary aerial and automotive championship
+                  finals. Explore our journey across 14 milestones spanning BAJA, SUPRA, Quad Torc, Aerothon, Effi-Cycle, and Laws of Motion.
+                </p>
+                <span className="comp-hero-stats-badge">
+                  14 National Milestones · 2011—2026
+                </span>
+              </div>
             </div>
           </div>
         </section>
@@ -188,13 +239,24 @@ export const CompetitionsPage: React.FC<CompetitionsPageProps> = ({ isActive, on
               </div>
 
               <div className="comp-timeline-track">
-                <span className="comp-timeline-line-base" />
-                <span
-                  className="comp-timeline-line-fill"
-                  style={{ height: `calc((100% - 2.5rem) * ${progressPercent / 100})` }}
-                />
+                <div className="comp-timeline-nav-list" ref={navListRef}>
+                  <span
+                    className="comp-timeline-line-base"
+                    style={{
+                      left: `${lineGeometry.left}px`,
+                      top: `${lineGeometry.top}px`,
+                      height: `${lineGeometry.baseHeight}px`,
+                    }}
+                  />
+                  <span
+                    className="comp-timeline-line-fill"
+                    style={{
+                      left: `${lineGeometry.left}px`,
+                      top: `${lineGeometry.top}px`,
+                      height: `${lineGeometry.fillHeight}px`,
+                    }}
+                  />
 
-                <div className="comp-timeline-nav-list">
                   {filteredMilestones.map((m, idx) => {
                     const isCurrent = m.id === activeMilestoneId;
                     const isPassed = idx <= activeIndex;

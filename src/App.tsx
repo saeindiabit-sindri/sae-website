@@ -36,6 +36,7 @@ export const App: React.FC = () => {
   const getInitialPage = (): string => {
     let hash = window.location.hash.replace('#', '').trim();
     if (hash === 'bearers') hash = 'team';
+    if (hash === 'achievements') hash = 'competitions';
     return VALID_PAGES.includes(hash) ? hash : 'home';
   };
 
@@ -44,6 +45,7 @@ export const App: React.FC = () => {
   const navigateTo = useCallback((pageOrId: string) => {
     let target = pageOrId;
     if (target === 'bearers') target = 'team';
+    if (target === 'achievements') target = 'competitions';
 
     if (VALID_PAGES.includes(target)) {
       setCurrentPage(target);
@@ -75,6 +77,7 @@ export const App: React.FC = () => {
     const handleHashChange = () => {
       let hash = window.location.hash.replace('#', '').trim();
       if (hash === 'bearers') hash = 'team';
+      if (hash === 'achievements') hash = 'competitions';
       if (VALID_PAGES.includes(hash)) {
         setCurrentPage(hash);
         window.scrollTo({ top: 0, behavior: 'smooth' });

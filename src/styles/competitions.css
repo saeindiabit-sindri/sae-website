@@ -27,15 +27,21 @@
 .comp-hero {
   position: relative;
   overflow: hidden;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 5rem 1.25rem 4rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1.5rem 1.25rem 2rem;
   background: radial-gradient(circle at 85% 20%, rgba(246, 183, 25, 0.08) 0%, transparent 60%),
               linear-gradient(180deg, rgba(13, 13, 12, 0.95) 0%, rgba(5, 5, 5, 1) 100%);
 }
 
+@media (min-width: 768px) {
+  .comp-hero {
+    padding: 2rem 2rem 2.25rem;
+  }
+}
+
 @media (min-width: 1024px) {
   .comp-hero {
-    padding: 7rem 2.5rem 5rem;
+    padding: 2.25rem 2.5rem 2.5rem;
   }
 }
 
@@ -46,67 +52,57 @@
   z-index: 2;
 }
 
-.comp-hero-eyebrow-row {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-.comp-eyebrow-line {
-  display: inline-block;
-  width: 3rem;
-  height: 2px;
-  background-color: var(--color-signal);
-}
-
-.comp-hero-heading {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 7vw, 7.5rem);
-  font-weight: 800;
-  text-transform: uppercase;
-  line-height: 0.88;
-  letter-spacing: -0.03em;
-  color: #ffffff;
-  margin-bottom: 2rem;
-}
-
-.comp-hero-meta-bar {
+.comp-hero-header-row {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   gap: 1.5rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  padding-top: 1.75rem;
 }
 
 @media (min-width: 768px) {
-  .comp-hero-meta-bar {
+  .comp-hero-header-row {
     flex-direction: row;
     align-items: flex-end;
-    justify-content: space-between;
+    gap: 3rem;
   }
 }
 
+.comp-hero-left-col {
+  flex: 1;
+  min-width: 0;
+}
+
+.comp-hero-title {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+.comp-hero-right-col {
+  flex: 1;
+  max-width: 34rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  align-items: flex-start;
+}
+
 .comp-hero-desc {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: rgba(255, 255, 255, 0.65);
-  max-width: 38rem;
   margin: 0;
 }
 
 .comp-hero-stats-badge {
   font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.16em;
   color: var(--color-signal);
   background: rgba(246, 183, 25, 0.08);
   border: 1px solid rgba(246, 183, 25, 0.35);
-  padding: 0.5rem 1rem;
+  padding: 0.4rem 0.85rem;
   border-radius: 9999px;
   white-space: nowrap;
+  display: inline-block;
 }
 
 /* ===================== FILTER TABS ROW ===================== */
@@ -292,22 +288,21 @@
 
 .comp-timeline-line-base {
   position: absolute;
-  top: 1.25rem;
-  bottom: 1.25rem;
-  left: 2.15rem;
   width: 1px;
-  background-color: rgba(255, 255, 255, 0.12);
+  transform: translateX(-50%);
+  background-color: rgba(255, 255, 255, 0.15);
   pointer-events: none;
+  z-index: 1;
 }
 
 .comp-timeline-line-fill {
   position: absolute;
-  top: 1.25rem;
-  left: 2.15rem;
   width: 2px;
+  transform: translateX(-50%);
   background-color: var(--color-signal);
-  box-shadow: 0 0 10px rgba(246, 183, 25, 0.4);
+  box-shadow: 0 0 10px rgba(246, 183, 25, 0.5);
   pointer-events: none;
+  z-index: 1;
   transition: height 350ms cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
