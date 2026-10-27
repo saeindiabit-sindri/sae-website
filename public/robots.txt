@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
-Sitemap: https://sae-bitsindri.org/sitemap.xml
+Sitemap: https://sae.bitsindri.ac.in/sitemap.xml
+
