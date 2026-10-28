@@ -12,6 +12,7 @@
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="SAE BIT Sindri">
   <meta property="og:url" content="https://sae.bitsindri.ac.in/">
   <meta property="og:title" content="SAE India · BIT Sindri | Collegiate Motorsport Chapter">
   <meta property="og:description" content="Designing, building, and competing with formula student and Baja racing vehicles at BIT Sindri.">
@@ -24,39 +25,57 @@
   <meta name="twitter:description" content="Official website of SAE India Collegiate Chapter at BIT Sindri. Designing, building, and racing high-performance Formula Student and Baja mobility vehicles.">
   <meta name="twitter:image" content="https://sae.bitsindri.ac.in/bit-sindri-sae-logo.png">
 
-  <!-- Structured Data / JSON-LD for Google Knowledge Graph & Search Ranking -->
+  <!-- Structured Data / JSON-LD for Google Site Name & Knowledge Graph -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "SAE India Collegiate Chapter BIT Sindri",
-    "alternateName": [
-      "SAE BIT Sindri",
-      "SAE India BIT Sindri",
-      "SAE Collegiate Club BIT Sindri"
-    ],
-    "url": "https://sae.bitsindri.ac.in",
-    "logo": "https://sae.bitsindri.ac.in/bit-sindri-sae-logo.png",
-    "email": "saeindia@bitsindri.ac.in",
-    "foundingDate": "2008",
-    "parentOrganization": {
-      "@type": "CollegeOrUniversity",
-      "name": "BIT Sindri",
-      "url": "https://bitsindri.ac.in"
-    },
-    "sameAs": [
-      "https://in.linkedin.com/company/saeindia-bit-sindri",
-      "https://www.instagram.com/sae_bit_sindri/",
-      "https://www.youtube.com/@saeindiabitsindri1180",
-      "https://www.facebook.com/SaeBITSindri/",
-      "https://github.com/saeindiabit-sindri"
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://sae.bitsindri.ac.in/#website",
+        "name": "SAE BIT Sindri",
+        "alternateName": [
+          "SAE India BIT Sindri",
+          "SAE Collegiate Chapter BIT Sindri"
+        ],
+        "url": "https://sae.bitsindri.ac.in/"
+      },
+      {
+        "@type": "EducationalOrganization",
+        "@id": "https://sae.bitsindri.ac.in/#organization",
+        "name": "SAE India Collegiate Chapter BIT Sindri",
+        "alternateName": [
+          "SAE BIT Sindri",
+          "SAE India BIT Sindri",
+          "SAE Collegiate Club BIT Sindri"
+        ],
+        "url": "https://sae.bitsindri.ac.in",
+        "logo": "https://sae.bitsindri.ac.in/bit-sindri-sae-logo.png",
+        "email": "saeindia@bitsindri.ac.in",
+        "foundingDate": "2008",
+        "parentOrganization": {
+          "@type": "CollegeOrUniversity",
+          "name": "BIT Sindri",
+          "url": "https://bitsindri.ac.in"
+        },
+        "sameAs": [
+          "https://in.linkedin.com/company/saeindia-bit-sindri",
+          "https://www.instagram.com/sae_bit_sindri/",
+          "https://www.youtube.com/@saeindiabitsindri1180",
+          "https://www.facebook.com/SaeBITSindri/",
+          "https://github.com/saeindiabit-sindri"
+        ]
+      }
     ]
   }
   </script>
 
   <title>SAE India · BIT Sindri</title>
-  <link rel="icon" type="image/png" href="/bit-sindri-sae-logo.png">
-  <link rel="apple-touch-icon" href="/bit-sindri-sae-logo.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
   <!-- Optimized Non-blocking Font Loading -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
