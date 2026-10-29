@@ -8,7 +8,7 @@ interface RouteMeta {
 
 const ROUTE_META_MAP: Record<string, RouteMeta> = {
   '/': {
-    title: 'SAE India · BIT Sindri | Collegiate Society of Automotive Engineers',
+    title: 'SAE India BIT Sindri | Collegiate Society of Automotive Engineers',
     description: 'The official collegiate mobility chapter of BIT Sindri. Designing national-tier championship racecars, aerodynamic drones, and future mobility solutions.',
   },
   '/about': {
@@ -58,7 +58,7 @@ export const RouteMetadata: React.FC = () => {
 
   useEffect(() => {
     const meta = ROUTE_META_MAP[location.pathname] || {
-      title: 'SAE India · BIT Sindri',
+      title: 'SAE India BIT Sindri',
       description: 'Official Collegiate Society of Automotive Engineers at BIT Sindri.',
     };
 
