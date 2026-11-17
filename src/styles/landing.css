@@ -1185,6 +1185,32 @@ body {
   }
 }
 
+@media (min-width: 1024px) and (orientation: landscape) and (max-height: 800px) {
+  .hero-content-wrap {
+    padding-top: calc(var(--header-height) + 0.75rem);
+    padding-bottom: 0.5rem;
+    align-items: flex-start;
+  }
+
+  .hero-visual-box-desktop {
+    align-self: center;
+  }
+
+  .hero-tag-row {
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-sub,
+  .hero-subtext {
+    margin-top: 0.75rem;
+    line-height: 1.45;
+  }
+
+  .hero-cta-row {
+    margin-top: 1rem;
+  }
+}
+
 /* Affiliated badge */
 .hero-affiliated-badge {
   position: absolute;
